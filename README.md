@@ -71,21 +71,20 @@ In Progress.
 
 ### Express
 
-app.get(path, callback [, callback …])
+- app.get(path, callback [, callback …])
 
-res.sendFile(path [, options][, fn])
+- res.sendFile(path [, options][, fn])
 
-app.use([path,] callback [, callback...])
+- app.use([path,] callback [, callback...])
 
 ### Node
 
-path.join([...paths])
-Added in: v0.1.16
-...paths <string> A sequence of path segments
-Returns: <string>
-The path.join() method joins all given path segments together using the platform-specific separator as a delimiter, then normalizes the resulting path.
-
-Zero-length path segments are ignored. If the joined path string is a zero-length string then '.' will be returned, representing the current working directory.
+- path.join([...paths])
+  Added in: v0.1.16
+  ...paths <string> A sequence of path segments
+  Returns: <string>
+  -- The path.join() method joins all given path segments together using the platform-specific separator as a delimiter, then normalizes the resulting path.
+  -- Zero-length path segments are ignored. If the joined path string is a zero-length string then '.' will be returned, representing the current working directory.
 
 ## Sources
 

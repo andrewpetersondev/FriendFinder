@@ -40,7 +40,7 @@
               <h3>Question 1</h3>
               <h4>I consider myself athletic.</h4>
               <label for="q1">Select an Option</label>
-              <select class="form-control" id="q1" name="question-1" required>
+              <select class="form-control select" id="q1" name="question-1" required>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -54,7 +54,7 @@
               <h3>Question 2</h3>
               <h4>I like to travel.</h4>
               <label for="q2">Select an Option</label>
-              <select class="form-control" id="q2" name="question-2" required>
+              <select class="form-control select" id="q2" name="question-2" required>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -63,11 +63,25 @@
               </select>
             </div>
             <!-- ./question #2 -->
+            <!-- question #3 -->
+            <div class="form-group">
+              <h3>Question 3</h3>
+              <h4>I like to travel.</h4>
+              <label for="q2">Select an Option</label>
+              <select class="form-control select" id="q3" name="question-3" required>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+            </div>
+            <!-- ./question #3 -->
           </div>
           <!-- ./questions container -->
 
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary submit">Submit</button>
 
         </form>
       </div>
@@ -82,28 +96,51 @@
       </div>
     </footer>
 
+    
+
   </div>
   <!-- ./container -->
 
   <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function () {
-      'use strict';
-      window.addEventListener('load', function () {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function (form) {
-          form.addEventListener('submit', function (event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
+    // capture user inputs
+    $(".submit").on("click", function (event) {
+      event.preventDefault();
+      
+      // Form validation
+      function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
         });
-      }, false);
-    })();
+
+      // validate name and photo input
+      if ($("#inputName").val().trim() !== "" && $("#linkToPhoto").val().trim() !== "") {
+
+        // object for user's data
+        var surveyAnswers = {
+          name: $("#inputName").val().trim(),
+          photo: $("#linkToPhoto").val().trim(),
+          scores: [$("#q1").val(), $("#q2").val(), $("#q3").val()]
+        };
+
+        console.log(surveyAnswers);
+
+        // ajax post to friends api
+        $.post("/api/friends", surveyAnswers, function(data) {
+          console.log(data);
+          // trigger modal?
+        });
+
+
+      }
+      // user did not enter name and photo link 
+      else {
+        alert("enter all fields before submitting!");
+      }
+
+    });
   </script>
 
   <!-- Optional JavaScript -->

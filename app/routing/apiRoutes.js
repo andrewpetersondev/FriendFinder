@@ -27,6 +27,8 @@ module.exports = function (app) {
         console.log(userPhoto);
         console.log(userScores);
 
+        res.json(userData);
+
     });
 
 }

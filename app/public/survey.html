@@ -12,6 +12,17 @@
   <!-- font awesome glyphicons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <title>Friend Finder!</title>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 
 <body>
@@ -81,7 +92,7 @@
           <!-- ./questions container -->
 
 
-          <button type="submit" class="btn btn-primary submit">Submit</button>
+          <button type="submit" class="btn btn-primary submit" data-toggle="modal" data-target="#resultsModal">Submit</button>
 
         </form>
       </div>
@@ -120,35 +131,10 @@
   </div>
   <!-- ./container -->
 
-  <!-- Optional JavaScript -->
-
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
-
-  <script src="https://code.jquery.com/jquery.js"></script>
-
   <script>
     // capture user inputs
     $(".submit").on("click", function (event) {
       event.preventDefault();
-
-      // Form validation
-      // function validateForm() {
-      //   var isValid = true;
-      //   $(".form-control").each(function() {
-      //     if ($(this).val() === "") {
-      //       isValid = false;
-      //     }
-
-      //   });
 
       // validate name and photo input
       if (($("#inputName").val().trim() !== "") && ($("#linkToPhoto").val().trim() !== "")) {
@@ -163,13 +149,16 @@
         console.log(surveyAnswers);
 
         // ajax post to friends api
-        // var currentURL = window.location.origin;
+        var currentURL = window.location.origin;
         $.post("/api/friends", surveyAnswers, function (data) {
+          if(data) {
+            alert("post is working");
+          }
           console.log(data);
           // trigger modal?
           $("#matchName").text(data.name);
           $("#matchImage").attr("src", data.photo);
-          $('#resultsModal').modal('toggle')
+          // $("#resultsModal").modal('toggle')
         });
       }
       // user did not enter name and photo link 

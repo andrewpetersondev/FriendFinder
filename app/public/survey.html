@@ -5,35 +5,27 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- font awesome glyphicons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <title>Friend Finder!</title>
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
-  <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 
 <body>
 
+  <!-- page container -->
   <div class="container">
+    <!-- row -->
     <div class="row">
+      <!-- column -->
       <div class="col-12">
         <h2>Survey Questions</h2>
         <hr>
         <h3>About You</h3>
 
+        <!-- form -->
         <form role="form" method="POST">
           <div class="form-group">
             <label for="inputName">Name (required)</label>
@@ -88,8 +80,8 @@
               </select>
             </div>
             <!-- ./question #3 -->
-             <!-- question #4 -->
-             <div class="form-group">
+            <!-- question #4 -->
+            <div class="form-group">
               <h3>Question 4</h3>
               <h4>I like adventure.</h4>
               <label for="q4">Select an Option</label>
@@ -102,8 +94,8 @@
               </select>
             </div>
             <!-- ./question #4 -->
-             <!-- question #5 -->
-             <div class="form-group">
+            <!-- question #5 -->
+            <div class="form-group">
               <h3>Question 5</h3>
               <h4>I prefer to be outside.</h4>
               <label for="q5">Select an Option</label>
@@ -116,8 +108,8 @@
               </select>
             </div>
             <!-- ./question #5 -->
-             <!-- question #6 -->
-             <div class="form-group">
+            <!-- question #6 -->
+            <div class="form-group">
               <h3>Question 6</h3>
               <h4>I like to cook.</h4>
               <label for="q6">Select an Option</label>
@@ -130,8 +122,8 @@
               </select>
             </div>
             <!-- ./question #6 -->
-             <!-- question #7 -->
-             <div class="form-group">
+            <!-- question #7 -->
+            <div class="form-group">
               <h3>Question 7</h3>
               <h4>I am a romantic.</h4>
               <label for="q7">Select an Option</label>
@@ -144,8 +136,8 @@
               </select>
             </div>
             <!-- ./question #7 -->
-             <!-- question #8 -->
-             <div class="form-group">
+            <!-- question #8 -->
+            <div class="form-group">
               <h3>Question 8</h3>
               <h4>I value honesty.</h4>
               <label for="q8">Select an Option</label>
@@ -158,8 +150,8 @@
               </select>
             </div>
             <!-- ./question #8 -->
-             <!-- question #9 -->
-             <div class="form-group">
+            <!-- question #9 -->
+            <div class="form-group">
               <h3>Question 9</h3>
               <h4>I value friendship.</h4>
               <label for="q9">Select an Option</label>
@@ -172,8 +164,8 @@
               </select>
             </div>
             <!-- ./question #9 -->
-             <!-- question #10 -->
-             <div class="form-group">
+            <!-- question #10 -->
+            <div class="form-group">
               <h3>Question 10</h3>
               <h4>I am outgoing.</h4>
               <label for="q10">Select an Option</label>
@@ -189,21 +181,24 @@
           </div>
           <!-- ./questions container -->
 
-
-          <button type="submit" class="btn btn-primary submit" data-toggle="modal" data-target="#resultsModal">Submit</button>
+          <button type="submit" class="btn btn-primary submit" data-toggle="modal"
+            data-target="#resultsModal">Submit</button>
 
         </form>
+        <!-- // form -->
       </div>
-      <!-- ./col-12 -->
+      <!-- // column -->
     </div>
-    <!-- ./row -->
+    <!-- // row -->
 
+    <!-- footer -->
     <footer class="footer">
       <div class="container">
         <p> <a href="/api/friends">API Friends List</a> | <a
             href="https://github.com/andrewpetersondev/FriendFinder">GitHub Repo</a></p>
       </div>
     </footer>
+    <!-- // footer -->
 
     <!-- modal -->
     <div id="resultsModal" class="modal" tabindex="-1" role="dialog">
@@ -225,10 +220,22 @@
         </div>
       </div>
     </div>
-    <!-- / modal -->
+    <!-- // modal -->
   </div>
-  <!-- ./container -->
+  <!-- // page container -->
 
+
+  <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery.js"></script>
   <script>
     // capture user inputs
     $(".submit").on("click", function (event) {
@@ -241,7 +248,9 @@
         var surveyAnswers = {
           name: $("#inputName").val().trim(),
           photo: $("#linkToPhoto").val().trim(),
-          scores: [$("#q1").val(), $("#q2").val(), $("#q3").val()]
+          scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(),
+            $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(),
+          ]
         };
 
         console.log(surveyAnswers);
@@ -249,8 +258,8 @@
         // ajax post to friends api
         var currentURL = window.location.origin;
         $.post("/api/friends", surveyAnswers, function (data) {
-          if(data) {
-            alert("post is working");
+          if (data) {
+            // alert("post is working");
           }
           console.log(data);
           // trigger modal?
@@ -259,14 +268,14 @@
           // $("#resultsModal").modal('toggle')
         });
       }
-      // user did not enter name and photo link 
+      // user did not enter name and photo link
       else {
         alert("enter all fields before submitting!");
       }
 
     });
   </script>
-
+  <!-- // scripts -->
 </body>
 
 </html>

@@ -4,13 +4,21 @@
 
 ## Technologies Used
 
+### Front End
+
 - HTML 5
 - CSS 3
 - JavaScript
 - jQuery
 - Bootstrap 4
+
+### Back End
+
 - Express
 - Node
+
+### Deployment
+
 - Heroku
 
 ## Overview
